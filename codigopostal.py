@@ -1,3 +1,6 @@
+#Codigo para obtener informacion de envios ---> CorreosChile
+#Agradecimientos a @jsavargas
+
 # Importamos las librerias
 from bs4 import BeautifulSoup
 import requests
