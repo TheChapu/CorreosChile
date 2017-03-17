@@ -1,4 +1,3 @@
-# codigo-postal-Correos-Chile
-obtener código postal a través de dirección.
-
+# Seguimiento-CorreosChile
+Obtener detalles de envios por CorreosChile
 python codigopostal.py
