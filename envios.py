@@ -1,3 +1,4 @@
+
 #Codigo para obtener informacion de envios ---> CorreosChile
 #Agradecimientos a @jsavargas
 
@@ -10,9 +11,12 @@ import json
 #RH352992401CN
 #ALS00359081
 # Pagina
+
+ID = "CN750400915LT"#Aqui numero de seguimiento
+
 link       = "http://seguimientoweb.correos.cl/ConEnvCorreos.aspx"
 host       = "seguimientoweb.correos.cl"
-parametros = urllib.urlencode({"obj_key":"Cor398-cc","obj_env":"RH352992401CN"})
+parametros = urllib.urlencode({"obj_key":"Cor398-cc","obj_env":ID})
 headers    = {
 "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0",
 "Content-type": "application/x-www-form-urlencoded",
