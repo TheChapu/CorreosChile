@@ -1,3 +1,2 @@
 # Seguimiento-CorreosChile
-Obtener detalles de envios por CorreosChile
-python codigopostal.py
+Obtener detalles de envios por CorreosC.py
