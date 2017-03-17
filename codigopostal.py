@@ -35,7 +35,7 @@ if respuesta.status == 200:
 		cols = row.find_all('td')
 		cols = [ele.text.strip() for ele in cols]
 		data.append([ele for ele in cols if ele])
-
+ 
 
 for x in range(0,len(data)):
 	print data[x]
