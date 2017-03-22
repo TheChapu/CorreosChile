@@ -1,4 +1,5 @@
 
+
 #Codigo para obtener informacion de envios ---> CorreosChile
 #Agradecimientos a @jsavargas
 
@@ -34,15 +35,18 @@ data = []
 
 if respuesta.status == 200:
 	soup = BeautifulSoup(ver_source, 'html5lib')
-	rows = soup.find_all('tr')
-	for row in rows:
-		cols = row.find_all('td')
-		cols = [ele.text.strip() for ele in cols]
-		data.append([ele for ele in cols if ele])
- 
+	entradas = soup.find_all('tr')
+	print "Tracking ID  : ",entradas[0].find_all('td')[1].text
+	print "Entregado a  : ",entradas[0].find_all('td')[3].text
+	print "Fecha        : ",entradas[1].find_all('td')[1].text
+	print "Rut          : ",entradas[1].find_all('td')[3].text
+	print "\n\n"
 
-for x in range(0,len(data)):
-	print data[x]
-	#Aqui falta un poco de orden
-	#for i in range(0,len(data[x])):
-		#print data[x][i]
+	for i in xrange(2,len(entradas)):
+		columnas = entradas[i].find_all('td')
+		if len(columnas)>0:
+		   print "Fecha: ",columnas[1].text.strip(" ").replace("&nbsp", "").strip()
+		   print "Estado: ",columnas[0].text.strip(" ").replace("&nbsp", "").strip()
+		   print "Oficina: ",columnas[2].text.strip(" ").replace("&nbsp", "").strip()
+		   #print "Fecha: %s Estado: %s Oficina: %s" % (columnas[1].text.strip(" ").replace("&nbsp", "").strip(),columnas[0].text.strip(" ").replace("&nbsp", "").strip(),columnas[2].text.strip(" ").replace("&nbsp", "").strip())
+		   print "\n"
